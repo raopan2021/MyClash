@@ -50,18 +50,18 @@
 - [mihomoScript.js（全量版）](/dist/mihomoScript.js)，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/mihomoScript.js
+https://raw.githubusercontent.com/raopan2021/MyClash/main/dist/mihomoScript.js
 ```
 
 - [Script.js（精简版）](/dist/Script.js)，仅包含少量分流策略组，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/Script.js
+https://raw.githubusercontent.com/raopan2021/MyClash/main/dist/Script.js
 ```
 
 |                                                                                   |
 | --------------------------------------------------------------------------------- |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/import.webp) |
+| ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/import.webp) |
 
 ### 源码结构（mihomoScript.js）
 
@@ -114,13 +114,13 @@ MyClash/
 - [mihomoConfig.yaml（全量版）](/Config/mihomoConfig.yaml)，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/Config/mihomoConfig.yaml
+https://raw.githubusercontent.com/raopan2021/MyClash/main/Config/mihomoConfig.yaml
 ```
 
 - [mihomoConfigLite.yaml（精简版）](/Config/mihomoConfigLite.yaml)，仅包含少量分流策略组，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/Config/mihomoConfigLite.yaml
+https://raw.githubusercontent.com/raopan2021/MyClash/main/Config/mihomoConfigLite.yaml
 ```
 
 ## 功能说明
@@ -190,8 +190,8 @@ https://raw.githubusercontent.com/AIsouler/MyClash/main/Config/mihomoConfigLite.
 
 |                                                                                  |                                                                                  |                                                                                  |                                                                                  |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_1.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_2.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_3.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_4.webp) |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_5.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_6.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/IMG_7.webp) |                                                                                  |
+| ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_1.webp) | ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_2.webp) | ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_3.webp) | ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_4.webp) |
+| ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_5.webp) | ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_6.webp) | ![img](https://raw.githubusercontent.com/raopan2021/MyClash/main/Image/IMG_7.webp) |                                                                                  |
 
 ## 致谢
 

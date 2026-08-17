@@ -1,8 +1,8 @@
 /**
  * mihomo配置覆写脚本（全量版）
- * 作者：AIsouler
- * 源仓库：https://github.com/AIsouler/MyClash
- * 脚本链接：https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/mihomoScript.js
+ * 作者：raopan2021
+ * 源仓库：https://github.com/raopan2021/MyClash
+ * 脚本链接：https://raw.githubusercontent.com/raopan2021/MyClash/main/dist/mihomoScript.js
  * 友情推荐，非常好用、省电且内存占用低的代理软件：https://github.com/appshubcc/Bettbox
  *
  * ----------------------------------------------------------------
