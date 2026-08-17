@@ -29,7 +29,7 @@ if (typeof buildCustomizeGroups !== 'undefined') {
 
 /**
  * 加载指定覆写脚本，返回其导出的符号。
- * @param {string} scriptPath 相对仓库根目录的脚本路径，如 'Script/Script.js'
+ * @param {string} scriptPath 相对仓库根目录的脚本路径，如 'dist/Script.js'
  * @param {(code: string) => string} [transform] 可选：在沙箱执行前对源码做字符串变换（用于注入自定义节点等静态配置）
  */
 function loadScript(scriptPath, transform) {

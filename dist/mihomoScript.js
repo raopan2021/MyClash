@@ -2,11 +2,16 @@
  * mihomo配置覆写脚本（全量版）
  * 作者：AIsouler
  * 源仓库：https://github.com/AIsouler/MyClash
- * 脚本链接：https://raw.githubusercontent.com/AIsouler/MyClash/main/Script/mihomoScript.js
+ * 脚本链接：https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/mihomoScript.js
  * 友情推荐，非常好用、省电且内存占用低的代理软件：https://github.com/appshubcc/Bettbox
+ *
+ * ----------------------------------------------------------------
+ * 本文件为构建产物，请勿直接修改！
+ * 源码位于 Script/modules/ 目录，修改后运行  node Script/build.js  重新生成。
+ * ----------------------------------------------------------------
  */
 
-// --- 静态配置区域 ---
+// ===================== options =====================
 
 // 适配 Bettbox 自定义配置参数
 const Compatible_With_Bettbox = { ruleOptionsEnable: true };
@@ -52,6 +57,9 @@ const ruleOptionsEnable = {
   代理IPV6优先: false, // 是否将订阅节点统一为 IPv6 优先（与“代理IPV4优先”同时开启时不生效）
   链式代理: false, // 是否启用链式代理（自定义节点作为落地节点，经“链式中转”策略组中转）
 };
+
+
+// ===================== static =====================
 
 // 定义前置规则
 const prefixRules = [
@@ -132,6 +140,9 @@ const directProxies = [
   },
 ];
 
+
+// ===================== regions =====================
+
 // 定义地区策略组
 const regionDefinitions = [
   {
@@ -186,6 +197,9 @@ const rateRegionDefinitions = [
 
 // 全部策略组定义（地区 + 倍率），统一用于节点匹配与归类
 const allRegionDefinitions = [...regionDefinitions, ...rateRegionDefinitions];
+
+
+// ===================== providers =====================
 
 // Rule Providers 通用配置
 const ruleProviderCommonDomain = {
@@ -291,6 +305,9 @@ const baseRuleProviders = {
   },
 };
 
+
+// ===================== groups =====================
+
 // 策略组公共配置
 const groupBaseOption = {
   interval: 600,
@@ -348,6 +365,9 @@ const baseGroups = [
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Round_Robin.png',
   },
 ];
+
+
+// ===================== service-configs =====================
 
 // 定义分流策略组配置
 const serviceConfigs = [
@@ -700,6 +720,9 @@ const serviceConfigs = [
   },
 ];
 
+
+// ===================== nodes =====================
+
 // ---节点过滤、重命名及验证---
 
 /**
@@ -851,6 +874,9 @@ function filterAndNormalizeProxies(config) {
   return filteredProxies;
 }
 
+
+// ===================== region-groups =====================
+
 // ---构建地区组和倍率组---
 
 /**
@@ -929,6 +955,9 @@ function buildRegionGroups(filteredProxies, customProxies) {
   return generatedRegionGroups;
 }
 
+
+// ===================== customize =====================
+
 // ---构建自定义节点组---
 
 /**
@@ -989,6 +1018,9 @@ function buildCustomizeGroups(filteredProxies, customizeList = customizeProxies)
     customGroup,
   };
 }
+
+
+// ===================== functional =====================
 
 // ---构建基础策略组和分流策略组---
 
@@ -1130,6 +1162,9 @@ function buildFunctionalGroups(filteredProxies, generatedRegionGroups, customize
 
   return { globalGroup, functionalGroups, functionalRules, finalRuleProviders, chainGroup };
 }
+
+
+// ===================== dns =====================
 
 // ---dns和hosts相关处理---
 
@@ -1438,6 +1473,9 @@ function buildDnsAndHostsConfig(config, filteredProxies) {
 
   return { dns, hosts, proxies: mappedProxies };
 }
+
+
+// ===================== main =====================
 
 // --- 主入口 ---
 

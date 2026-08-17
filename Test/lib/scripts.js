@@ -7,7 +7,7 @@
  */
 const SCRIPTS = [
   {
-    file: 'Script/Script.js',
+    file: 'dist/Script.js',
     label: '精简版 Script.js',
     meta: {
       full: false,
@@ -15,7 +15,7 @@ const SCRIPTS = [
     },
   },
   {
-    file: 'Script/mihomoScript.js',
+    file: 'dist/mihomoScript.js',
     label: '全量版 mihomoScript.js',
     meta: {
       full: true,

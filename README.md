@@ -47,21 +47,53 @@
 
 复制以下任意一个链接或者复制完整代码后按如图所示步骤导入到代理客户端，以 [Bettbox](https://github.com/appshubcc/Bettbox) 为例
 
-- [mihomoScript.js（全量版）](/Script/mihomoScript.js)，复制下面这个链接使用👇👇👇
+- [mihomoScript.js（全量版）](/dist/mihomoScript.js)，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/Script/mihomoScript.js
+https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/mihomoScript.js
 ```
 
-- [Script.js（精简版）](/Script/Script.js)，仅包含少量分流策略组，复制下面这个链接使用👇👇👇
+- [Script.js（精简版）](/dist/Script.js)，仅包含少量分流策略组，复制下面这个链接使用👇👇👇
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/MyClash/main/Script/Script.js
+https://raw.githubusercontent.com/AIsouler/MyClash/main/dist/Script.js
 ```
 
 |                                                                                   |
 | --------------------------------------------------------------------------------- |
 | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/main/Image/import.webp) |
+
+### 源码结构（mihomoScript.js）
+
+`dist/mihomoScript.js` 是**构建产物**（供一键导入与测试），源码按职责拆分在 `Script/modules/` 目录：
+
+```text
+MyClash/
+├── package.json         # npm 脚本：build / test，以及 pre-commit 钩子配置
+├── dist/
+│   ├── mihomoScript.js  # 全量版构建产物（请勿直接修改，由 build 生成）
+│   └── Script.js        # 精简版（独立文件，随 git 提交）
+└── Script/
+    ├── build.js         # 构建脚本：拼接 modules 重新生成 dist/mihomoScript.js
+    └── modules/
+        ├── _header.js       # 顶部注释（脚本头）
+        ├── options.js       # 配置开关 ruleOptionsEnable
+        ├── static.js        # 前置规则 / 自定义节点 / 排除正则 / QUIC / 直连节点
+        ├── regions.js       # 地区 / 倍率策略组定义
+        ├── providers.js     # 基础 Rule Providers（规则集）
+        ├── groups.js        # select / url-test / load-balance 基础配置
+        ├── service-configs.js # 全量版分流策略组配置（AI / Media / Google …）
+        ├── nodes.js         # 节点过滤、标准化、重命名、验证
+        ├── region-groups.js # 构建地区 / 倍率策略组
+        ├── customize.js     # 自定义节点处理
+        ├── functional.js    # 构建基础 / 分流策略组、GLOBAL、规则集
+        ├── dns.js           # DNS 与 hosts 处理
+        └── main.js          # main() 入口
+```
+
+**修改方式**：改动 `Script/modules/` 下的任一文件后，运行 `npm run build`（或 `node Script/build.js`）重新生成 `dist/mihomoScript.js`。
+
+**自动构建**：已在 `package.json` 配置 `simple-git-hooks`，commit 前会自动执行构建并 `git add dist/`（生成的产物一并提交，保证 raw 链接可用）。首次需执行 `npm install && npx simple-git-hooks` 激活钩子。
 
 ## 配置文件
 

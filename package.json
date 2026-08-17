@@ -1,0 +1,16 @@
+{
+  "name": "myclash",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MyClash 覆写脚本仓库：源码在 Script/modules/，构建产物输出到 dist/",
+  "scripts": {
+    "build": "node Script/build.js",
+    "test": "node Test/run-tests.js"
+  },
+  "devDependencies": {
+    "simple-git-hooks": "^2.11.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run build && git add dist/"
+  }
+}

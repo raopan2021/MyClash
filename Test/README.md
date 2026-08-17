@@ -1,6 +1,6 @@
 # MyClash 覆写脚本测试
 
-对 `Script/Script.js`（精简版）与 `Script/mihomoScript.js`（全量版）两个覆写脚本的自动化测试。
+对 `dist/Script.js`（精简版）与 `dist/mihomoScript.js`（全量版）两个覆写脚本的自动化测试。
 
 ## 运行方式
 
