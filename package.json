@@ -5,7 +5,8 @@
   "description": "MyClash 覆写脚本仓库：源码在 Script/modules/，构建产物输出到 dist/",
   "scripts": {
     "build": "node Script/build.js",
-    "test": "node Test/run-tests.js"
+    "test": "node Test/run-tests.js",
+    "all": "npm run build && npm test && git add dist/"
   },
   "devDependencies": {
     "simple-git-hooks": "^2.11.1"

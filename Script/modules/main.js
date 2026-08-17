@@ -15,6 +15,11 @@ function main(config) {
   // 构建地区组和倍率组
   const generatedRegionGroups = buildRegionGroups(filteredProxies, customProxies);
 
+  // 低倍率节点组置顶：在 proxy-groups 中排在最前面，便于快速切换
+  const lowRateGroupNames = [lowRateRegionName, `${lowRateRegionName}-自动选择`];
+  const lowRateGroups = generatedRegionGroups.filter((g) => lowRateGroupNames.includes(g.name));
+  const restRegionGroups = generatedRegionGroups.filter((g) => !lowRateGroupNames.includes(g.name));
+
   // 构建基础策略组和分流策略组（含“自建节点”策略组与“链式中转”策略组）
   const { globalGroup, functionalGroups, functionalRules, finalRuleProviders, chainGroup } = buildFunctionalGroups(
     filteredProxies,
@@ -67,10 +72,11 @@ function main(config) {
 
   newConfig['proxies'] = [...customProxies, ...mappedProxies, ...directProxies];
   newConfig['proxy-groups'] = [
+    ...lowRateGroups,
     globalGroup,
     ...functionalGroups,
     ...(chainGroup ? [chainGroup] : []),
-    ...generatedRegionGroups,
+    ...restRegionGroups,
   ];
   newConfig['rule-providers'] = finalRuleProviders;
 
