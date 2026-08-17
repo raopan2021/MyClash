@@ -29,13 +29,13 @@ const OUTPUT = path.join(ROOT, '../dist/mihomoScript.js');
  * 模块之间通过顶层 const/function 互相引用，拼接后处于同一全局作用域。
  */
 const MODULE_ORDER = [
-  // 静态配置
-  'options.js', // ruleOptionsEnable（配置开关）
-  'static.js', // prefixRules / customizeProxies / excludeFilter / blockForeignQuic / directProxies
-  'regions.js', // regionDefinitions / rateRegionDefinitions / allRegionDefinitions
-  'providers.js', // baseRuleProviders
-  'groups.js', // select/url-test/load-balance 基础配置 + baseGroups
-  'service-configs.js', // serviceConfigs（全量版分流策略组）
+  // 静态配置（Script/modules/static/）
+  'static/options.js', // ruleOptionsEnable（配置开关）
+  'static/static.js', // prefixRules / customizeProxies / excludeFilter / blockForeignQuic / directProxies
+  'static/regions.js', // regionDefinitions / rateRegionDefinitions / allRegionDefinitions
+  'static/providers.js', // baseRuleProviders
+  'static/groups.js', // select/url-test/load-balance 基础配置 + baseGroups
+  'static/service-configs.js', // serviceConfigs（全量版分流策略组）
 
   // 逻辑
   'nodes.js', // 节点过滤/标准化/重命名
@@ -56,8 +56,8 @@ function readModule(file) {
 
 /** 生成单文件脚本内容 */
 function build() {
-  // 顶部注释提取为独立模块 _header.js（避免在 build.js 里硬编码，便于统一维护）
-  const header = readModule('_header.js');
+  // 顶部注释提取为独立模块 static/header.js（避免在 build.js 里硬编码，便于统一维护）
+  const header = readModule('static/header.js');
 
   const parts = MODULE_ORDER.map((file, index) => {
     const title = file.replace(/\.js$/, '').replace(/^_/, '');

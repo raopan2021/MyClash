@@ -1,2 +1,5 @@
 # 依赖
 node_modules/
+
+# AI 工作记忆（本地私有数据，不提交）
+.codebuddy/

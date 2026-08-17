@@ -76,13 +76,14 @@ MyClash/
 └── Script/
     ├── build.js         # 构建脚本：拼接 modules 重新生成 dist/mihomoScript.js
     └── modules/
-        ├── _header.js       # 顶部注释（脚本头）
-        ├── options.js       # 配置开关 ruleOptionsEnable
-        ├── static.js        # 前置规则 / 自定义节点 / 排除正则 / QUIC / 直连节点
-        ├── regions.js       # 地区 / 倍率策略组定义
-        ├── providers.js     # 基础 Rule Providers（规则集）
-        ├── groups.js        # select / url-test / load-balance 基础配置
-        ├── service-configs.js # 全量版分流策略组配置（AI / Media / Google …）
+        ├── static/              # 纯静态配置（无逻辑函数）
+        │   ├── header.js        # 顶部注释（脚本头）
+        │   ├── options.js       # 配置开关 ruleOptionsEnable
+        │   ├── static.js        # 前置规则 / 自定义节点 / 排除正则 / QUIC / 直连节点
+        │   ├── regions.js       # 地区 / 倍率策略组定义
+        │   ├── providers.js     # 基础 Rule Providers（规则集）
+        │   ├── groups.js        # select / url-test / load-balance 基础配置
+        │   └── service-configs.js # 全量版分流策略组配置（AI / Media / Google …）
         ├── nodes.js         # 节点过滤、标准化、重命名、验证
         ├── region-groups.js # 构建地区 / 倍率策略组
         ├── customize.js     # 自定义节点处理

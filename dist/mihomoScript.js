@@ -11,7 +11,7 @@
  * ----------------------------------------------------------------
  */
 
-// ===================== options =====================
+// ===================== static/options =====================
 
 // 适配 Bettbox 自定义配置参数
 const Compatible_With_Bettbox = { ruleOptionsEnable: true };
@@ -59,7 +59,7 @@ const ruleOptionsEnable = {
 };
 
 
-// ===================== static =====================
+// ===================== static/static =====================
 
 // 定义前置规则
 const prefixRules = [
@@ -141,7 +141,7 @@ const directProxies = [
 ];
 
 
-// ===================== regions =====================
+// ===================== static/regions =====================
 
 // 定义地区策略组
 const regionDefinitions = [
@@ -199,7 +199,7 @@ const rateRegionDefinitions = [
 const allRegionDefinitions = [...regionDefinitions, ...rateRegionDefinitions];
 
 
-// ===================== providers =====================
+// ===================== static/providers =====================
 
 // Rule Providers 通用配置
 const ruleProviderCommonDomain = {
@@ -306,7 +306,7 @@ const baseRuleProviders = {
 };
 
 
-// ===================== groups =====================
+// ===================== static/groups =====================
 
 // 策略组公共配置
 const groupBaseOption = {
@@ -367,7 +367,7 @@ const baseGroups = [
 ];
 
 
-// ===================== service-configs =====================
+// ===================== static/service-configs =====================
 
 // 定义分流策略组配置
 const serviceConfigs = [
